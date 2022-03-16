@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="reset.css">
+	<title></title>
+</head>
+<body>
+	<div style="width:200px;height:200px;">
+        <ul class="clearfix">
+            <li class="img01"><img src="img01.png" alt="" style = 'width:200px;height:200px; position:absolute;left:0px;top:0px;'></li>
+            <li class="img02"><img src="img02.png" alt="" style = 'width:200px;height:200px; position:absolute;left:0px;top:0px;'></li>
+            <li class="img03"><img src="img03.png" alt="" style = 'width:200px;height:200px; position:absolute;left:0px;top:0px;'></li>
+            <li class="img04"><img src="img04.png" alt="" style = 'width:200px;height:200px; position:absolute;left:0px;top:0px;'></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    	var img = document.getElementsByTagName('img');
+        var len = img.length;
+        var num = 0;
+        function scroll(){
+            for (var i = 0;i < len; i++){
+                img[i].style.display = 'none';
+            }
+            img[num].style.display = 'block';
+            console.log(num);
+            num ++;
+            if(num == len)
+                {
+                    num = 0;
+                }
+        }
+        setInterval(scroll,1000);
+    </script>
+</body>
+</html>

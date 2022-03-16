@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="reset.css">
+</head>
+<body>
+	<div style="width:200px;height:200px; position:relative;overflow:hidden;">
+        <ul style = 'position:absolute;left:0px;top:0px;display:flex;'>
+            <li><img src="img01.png" alt="" style = 'width:200px;height:200px;'></li>
+            <li><img src="img02.png" alt="" style = 'width:200px;height:200px;'></li>
+            <li><img src="img03.png" alt="" style = 'width:200px;height:200px;'></li>
+            <li><img src="img04.png" alt="" style = 'width:200px;height:200px;'></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    	var ul = document.getElementsByTagName('ul')[0];
+    		len = document.getElementsByTagName('img').length;
+    		li = document.createElement('li');
+    		img = document.createElement('img');
+    	var x = ul.style.left;
+    	img.src = 'img01.png';
+    	img.style.width = '200px';
+    	img.style.height = '200px';
+    	li.appendChild(img);
+    	function move(){
+    		ul.style.left = parseInt(x) - 10 + 'px';
+    		x = ul.style.left;
+    		if (parseInt(x) == -(len-1)*200){
+    			ul.appendChild(li);
+    		}
+    		if (parseInt(x) == -(len)*200){
+    			x = "0px";
+    		}
+    	}
+    	setInterval(move, 100);
+    </script>
+</body>
+</html>
+</body>
